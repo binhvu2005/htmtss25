@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let n =+ prompt()
+       
+        let tong=0;
+        if (!isNaN(n)) {
+           for(i=1;i<=n;i++){
+            let b=1;
+            for(j=1;j<=i;j++){
+                b*=j;
+            }
+           
+            tong+=b;
+           }
+           console.log(tong);
+        }else{
+            document.write('không hợp lệ')
+        }
+    </script>
+</body>
+</html>

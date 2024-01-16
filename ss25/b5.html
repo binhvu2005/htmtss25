@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function demChuSoChan(n) {
+        let dem = 0;
+        let chuoi = n.toString();
+        for (let i = 0; i < chuoi.length; i++) {
+          let kyTu = chuoi[i];
+          let so = Number(kyTu);
+          if (so % 2 == 0) {
+            dem++;
+          }
+        }
+        return dem;
+      }
+      let n = prompt("Nhập vào số nguyên n:");
+      let kq = demChuSoChan(n);
+      console.log("Trong số " + n + " có " + kq + " chữ số chẵn.");
+    </script>
+  </body>
+</html>

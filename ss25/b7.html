@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function findGCD(x, y) {
+        while (y !== 0) {
+          var temp = y;
+          y = x % y;
+          x = temp;
+        }
+        return x;
+      }
+
+      function findLCM(a, b, c, d) {
+        var gcd1 = findGCD(a, b);
+        var gcd2 = findGCD(c, d);
+        var gcd3 = findGCD(gcd1, gcd2);
+
+        var lcm1 = (a * b) / gcd1;
+        var lcm2 = (c * d) / gcd2;
+
+        var lcm = (lcm1 * lcm2) / findGCD(lcm1, lcm2, gcd3);
+
+        return lcm;
+      }
+
+      var a = parseInt(prompt("Nhập số nguyên a:"));
+      var b = parseInt(prompt("Nhập số nguyên b:"));
+      var c = parseInt(prompt("Nhập số nguyên c:"));
+      var d = parseInt(prompt("Nhập số nguyên d:"));
+
+      var result = findLCM(a, b, c, d);
+
+      console.log("Bội chung nhỏ nhất của", a, b, c, d, "là:", result);
+    </script>
+  </body>
+</html>

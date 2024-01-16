@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function haveDistinctDigits(num) {
+    const digitSet = new Set();
+    const numStr = num.toString();
+
+    for (const digit of numStr) {
+        if (digitSet.has(digit)) {
+            return false;
+        }
+        digitSet.add(digit);
+    }
+
+    return true;
+}
+
+function printDistinctDigitsInRange(a, b) {
+    for (let i = a; i <= b; i++) {
+        if (haveDistinctDigits(i)) {
+            console.log(i);
+        }
+    }
+}
+
+var a = parseInt(prompt("Nhập số nguyên dương a:"));
+var b = parseInt(prompt("Nhập số nguyên dương b:"));
+
+if (a <= b && a > 0 && b > 0) {
+    console.log(`Các số có các chữ số phân biệt trong khoảng từ ${a} đến ${b} là:`);
+    printDistinctDigitsInRange(a, b);
+} else {
+    console.log("Vui lòng nhập lại số nguyên dương hợp lệ.");
+}
+
+    </script>
+</body>
+</html>
